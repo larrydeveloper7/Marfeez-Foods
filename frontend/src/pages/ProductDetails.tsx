@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const ProductDetails: React.FC = () => {
   const { id } = useParams();
+  console.log('Product ID:', id); // Use the id parameter
   const [selectedSize, setSelectedSize] = useState('Regular');
   const [selectedSpice, setSelectedSpice] = useState('Mild');
   const [addOns, setAddOns] = useState({

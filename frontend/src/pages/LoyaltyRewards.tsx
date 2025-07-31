@@ -19,7 +19,7 @@ interface Activity {
 }
 
 const LoyaltyRewards: React.FC = () => {
-  const [selectedReward, setSelectedReward] = useState<string | null>(null);
+  const [, setSelectedReward] = useState<string | null>(null);
 
   const userProfile = {
     name: 'Sophia Carter',
@@ -77,6 +77,7 @@ const LoyaltyRewards: React.FC = () => {
     setSelectedReward(rewardId);
     // Implement redemption logic here
     console.log(`Redeeming reward: ${rewardId}`);
+    alert(`Redeeming ${rewards.find(r => r.id === rewardId)?.name}!`);
   };
 
   const progressPercentage = ((userProfile.currentPoints - 500) / userProfile.pointsToNextTier) * 100;

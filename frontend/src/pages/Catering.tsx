@@ -26,6 +26,15 @@ interface QuoteForm {
   additionalInfo: string;
 }
 
+interface QuoteFormErrors {
+  name?: string;
+  email?: string;
+  eventType?: string;
+  eventDate?: string;
+  guestCount?: string;
+  additionalInfo?: string;
+}
+
 const Catering: React.FC = () => {
   const [formData, setFormData] = useState<QuoteForm>({
     name: '',
@@ -35,7 +44,7 @@ const Catering: React.FC = () => {
     guestCount: 0,
     additionalInfo: ''
   });
-  const [errors, setErrors] = useState<Partial<QuoteForm>>({});
+  const [errors, setErrors] = useState<QuoteFormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -106,7 +115,7 @@ const Catering: React.FC = () => {
   };
 
   const validateForm = () => {
-    const newErrors: Partial<QuoteForm> = {};
+    const newErrors: QuoteFormErrors = {};
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';

@@ -11,6 +11,16 @@ interface ReservationForm {
   specialRequests: string;
 }
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  date?: string;
+  time?: string;
+  guests?: string;
+  specialRequests?: string;
+}
+
 const Reservation: React.FC = () => {
   const [formData, setFormData] = useState<ReservationForm>({
     name: '',
@@ -22,7 +32,7 @@ const Reservation: React.FC = () => {
     specialRequests: ''
   });
 
-  const [errors, setErrors] = useState<Partial<ReservationForm>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -38,7 +48,7 @@ const Reservation: React.FC = () => {
   };
 
   const validateForm = () => {
-    const newErrors: Partial<ReservationForm> = {};
+    const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';

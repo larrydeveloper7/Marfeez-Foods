@@ -8,5 +8,10 @@ export default defineConfig({
   root: './frontend',
   build: {
     outDir: '../dist',
+    sourcemap: true,
+  },
+  server: {
+    port: 5173,
+    host: true,
   },
 }) 

@@ -4,13 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 
 const Navbar: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(() => {
+  const [darkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark';
     }
     return false;
   });
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const { cartCount } = useCart();
@@ -24,12 +23,6 @@ const Navbar: React.FC = () => {
       localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-  const activeClass = 'text-indigo-400 border-b-2 border-indigo-400';
 
   const navItems = [
     { to: '/', label: 'Home' },
