@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderTracking from './pages/OrderTracking';
 import Reservation from './pages/Reservation';
+import Catering from './pages/Catering';
 import Login from './pages/Login';
 import UserDashboard from './pages/UserDashboard';
 import LoyaltyRewards from './pages/LoyaltyRewards';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/order-tracking" element={<OrderTracking />} />
             <Route path="/reservation" element={<Reservation />} />
+            <Route path="/catering" element={<Catering />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<UserDashboard />} />
             <Route path="/loyalty" element={<LoyaltyRewards />} />

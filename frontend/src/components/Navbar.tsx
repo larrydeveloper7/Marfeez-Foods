@@ -29,7 +29,6 @@ const Navbar: React.FC = () => {
     { to: '/menu', label: 'Menu' },
     { to: '/reservation', label: 'Reservation' },
     { to: '/catering', label: 'Catering' },
-    { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
   ];
 
